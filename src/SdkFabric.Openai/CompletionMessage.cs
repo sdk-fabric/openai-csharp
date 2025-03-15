@@ -7,13 +7,19 @@ using System.Text.Json.Serialization;
 
 namespace SdkFabric.Openai;
 
-public class CompletionMessage
+[JsonPolymorphic(TypeDiscriminatorPropertyName = "role")]
+[JsonDerivedType(typeof(CompletionMessageDeveloper), typeDiscriminator: "developer")]
+[JsonDerivedType(typeof(CompletionMessageSystem), typeDiscriminator: "system")]
+[JsonDerivedType(typeof(CompletionMessageUser), typeDiscriminator: "user")]
+[JsonDerivedType(typeof(CompletionMessageAssistant), typeDiscriminator: "assistant")]
+[JsonDerivedType(typeof(CompletionMessageTool), typeDiscriminator: "tool")]
+public abstract class CompletionMessage
 {
     [JsonPropertyName("role")]
     public string? Role { get; set; }
 
     [JsonPropertyName("content")]
-    public string? Content { get; set; }
+    public System.Collections.Generic.List<string>? Content { get; set; }
 
 }
 
