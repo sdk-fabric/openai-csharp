@@ -1,0 +1,9 @@
+{
+  "type": "client-csharp",
+  "require": {
+    "sdkfabric/openai": {
+      "target": "./src/SdkFabric.Openai",
+      "namespace": "SdkFabric.Openai"
+    }
+  }
+}
