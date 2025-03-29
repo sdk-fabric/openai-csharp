@@ -46,6 +46,13 @@ public class CompletionsTag : TagAbstract {
         }
 
         var statusCode = (int) response.StatusCode;
+        if (statusCode >= 0 && statusCode <= 999)
+        {
+            var data = this.Parser.Parse<Error>(response.Content);
+
+            throw new ErrorException(data);
+        }
+
         throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
     }
     /**
@@ -77,6 +84,13 @@ public class CompletionsTag : TagAbstract {
         }
 
         var statusCode = (int) response.StatusCode;
+        if (statusCode >= 0 && statusCode <= 999)
+        {
+            var data = this.Parser.Parse<Error>(response.Content);
+
+            throw new ErrorException(data);
+        }
+
         throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
     }
     /**
@@ -105,6 +119,13 @@ public class CompletionsTag : TagAbstract {
         }
 
         var statusCode = (int) response.StatusCode;
+        if (statusCode >= 0 && statusCode <= 999)
+        {
+            var data = this.Parser.Parse<Error>(response.Content);
+
+            throw new ErrorException(data);
+        }
+
         throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
     }
 
