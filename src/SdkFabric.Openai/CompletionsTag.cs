@@ -56,6 +56,41 @@ public class CompletionsTag : TagAbstract {
         throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
     }
     /**
+     * Delete a stored chat completion. Only Chat Completions that have been created with the store parameter set to true can be deleted.
+     */
+    public async Task<CompletionDeleted> Delete(string completionId)
+    {
+        Dictionary<string, object> pathParams = new();
+        pathParams.Add("completion_id", completionId);
+
+        Dictionary<string, object> queryParams = new();
+
+        List<string> queryStructNames = new();
+
+        RestRequest request = new(this.Parser.Url("/v1/chat/completions/:completion_id", pathParams), Method.Delete);
+        this.Parser.Query(request, queryParams, queryStructNames);
+
+
+        RestResponse response = await this.HttpClient.ExecuteAsync(request);
+
+        if (response.IsSuccessful)
+        {
+            var data = this.Parser.Parse<CompletionDeleted>(response.Content);
+
+            return data;
+        }
+
+        var statusCode = (int) response.StatusCode;
+        if (statusCode >= 0 && statusCode <= 999)
+        {
+            var data = this.Parser.Parse<Error>(response.Content);
+
+            throw new ErrorException(data);
+        }
+
+        throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
+    }
+    /**
      * List stored Chat Completions. Only Chat Completions that have been stored with the store parameter set to true will be returned.
      */
     public async Task<CompletionCollection> GetAll(string after, int limit, string model, string order)
@@ -79,41 +114,6 @@ public class CompletionsTag : TagAbstract {
         if (response.IsSuccessful)
         {
             var data = this.Parser.Parse<CompletionCollection>(response.Content);
-
-            return data;
-        }
-
-        var statusCode = (int) response.StatusCode;
-        if (statusCode >= 0 && statusCode <= 999)
-        {
-            var data = this.Parser.Parse<Error>(response.Content);
-
-            throw new ErrorException(data);
-        }
-
-        throw new UnknownStatusCodeException("The server returned an unknown status code: " + statusCode);
-    }
-    /**
-     * Delete a stored chat completion. Only Chat Completions that have been created with the store parameter set to true can be deleted.
-     */
-    public async Task<CompletionDeleted> Delete(string completionId)
-    {
-        Dictionary<string, object> pathParams = new();
-        pathParams.Add("completion_id", completionId);
-
-        Dictionary<string, object> queryParams = new();
-
-        List<string> queryStructNames = new();
-
-        RestRequest request = new(this.Parser.Url("/v1/chat/completions/:completion_id", pathParams), Method.Delete);
-        this.Parser.Query(request, queryParams, queryStructNames);
-
-
-        RestResponse response = await this.HttpClient.ExecuteAsync(request);
-
-        if (response.IsSuccessful)
-        {
-            var data = this.Parser.Parse<CompletionDeleted>(response.Content);
 
             return data;
         }

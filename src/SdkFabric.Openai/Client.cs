@@ -28,15 +28,23 @@ public class Client : ClientAbstract
         );
     }
 
+    public ResponsesTag Responses()
+    {
+        return new ResponsesTag(
+            this.HttpClient,
+            this.Parser
+        );
+    }
+
 
 
     public static Client Build(string token)
     {
-        return new Client("https://api.openai.com/", new HttpBearer(token));
+        return new Client("https://api.openai.com", new HttpBearer(token));
     }
 
     public static Client BuildAnonymous()
     {
-        return new Client("https://api.openai.com/", new Anonymous());
+        return new Client("https://api.openai.com", new Anonymous());
     }
 }
