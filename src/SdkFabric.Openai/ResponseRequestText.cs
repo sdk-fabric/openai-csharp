@@ -10,7 +10,7 @@ namespace SdkFabric.Openai;
 public class ResponseRequestText
 {
     [JsonPropertyName("format")]
-    public string? Format { get; set; }
+    public ResponseRequestTextFormat? Format { get; set; }
 
     [JsonPropertyName("verbosity")]
     public string? Verbosity { get; set; }
