@@ -19,13 +19,13 @@ public class ResponseRequestInputMcpListTools : ResponseRequestInput
     public string? ServerLabel { get; set; }
 
     [JsonPropertyName("tools")]
-    public string? Tools { get; set; }
-
-    [JsonPropertyName("type")]
-    public new System.Collections.Generic.List<ResponseMCPTool>? Type { get; set; }
+    public System.Collections.Generic.List<ResponseMCPTool>? Tools { get; set; }
 
     [JsonPropertyName("error")]
     public string? Error { get; set; }
+
+    [JsonPropertyName("type")]
+    public new string? Type { get; set; } = "mcp_list_tools";
 
 }
 
