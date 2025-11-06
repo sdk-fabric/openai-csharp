@@ -13,13 +13,13 @@ public class ResponseRequest
     public bool? Background { get; set; }
 
     [JsonPropertyName("conversation")]
-    public ResponseRequestConversation? Conversation { get; set; }
+    public string? Conversation { get; set; }
 
     [JsonPropertyName("include")]
     public System.Collections.Generic.List<string>? Include { get; set; }
 
     [JsonPropertyName("input")]
-    public string? Input { get; set; }
+    public System.Collections.Generic.List<ResponseRequestInput>? Input { get; set; }
 
     [JsonPropertyName("instructions")]
     public string? Instructions { get; set; }
@@ -64,13 +64,13 @@ public class ResponseRequest
     public double? Temperature { get; set; }
 
     [JsonPropertyName("text")]
-    public ResponseText? Text { get; set; }
+    public ResponseRequestText? Text { get; set; }
 
     [JsonPropertyName("tool_choice")]
     public string? ToolChoice { get; set; }
 
     [JsonPropertyName("tools")]
-    public System.Collections.Generic.List<ResponseTool>? Tools { get; set; }
+    public System.Collections.Generic.List<ResponseRequestTool>? Tools { get; set; }
 
     [JsonPropertyName("top_logprobs")]
     public int? TopLogprobs { get; set; }

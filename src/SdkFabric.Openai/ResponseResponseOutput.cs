@@ -8,6 +8,7 @@ using System.Text.Json.Serialization;
 namespace SdkFabric.Openai;
 
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "type")]
+[JsonDerivedType(typeof(ResponseResponseOutputFunctionCall), typeDiscriminator: "function_call")]
 [JsonDerivedType(typeof(ResponseResponseOutputMessage), typeDiscriminator: "message")]
 public abstract class ResponseResponseOutput
 {
