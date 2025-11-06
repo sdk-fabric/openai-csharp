@@ -10,7 +10,7 @@ namespace SdkFabric.Openai;
 public class ResponseTextFormatText : ResponseTextFormat
 {
     [JsonPropertyName("type")]
-    public new string? Type { get; set; }
+    public new string? Type { get; set; } = "text";
 
 }
 

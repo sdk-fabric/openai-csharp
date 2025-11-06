@@ -19,7 +19,7 @@ public class ResponseToolFunction : ResponseTool
     public bool? Strict { get; set; }
 
     [JsonPropertyName("type")]
-    public new string? Type { get; set; }
+    public new string? Type { get; set; } = "function";
 
     [JsonPropertyName("description")]
     public string? Description { get; set; }

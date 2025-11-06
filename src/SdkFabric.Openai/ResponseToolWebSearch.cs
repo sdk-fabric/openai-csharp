@@ -10,7 +10,7 @@ namespace SdkFabric.Openai;
 public class ResponseToolWebSearch : ResponseTool
 {
     [JsonPropertyName("type")]
-    public new string? Type { get; set; }
+    public new string? Type { get; set; } = "web_search";
 
     [JsonPropertyName("filters")]
     public ResponseToolWebSearchFilter? Filters { get; set; }

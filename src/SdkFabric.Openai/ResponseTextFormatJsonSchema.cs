@@ -16,7 +16,7 @@ public class ResponseTextFormatJsonSchema : ResponseTextFormat
     public object? Schema { get; set; }
 
     [JsonPropertyName("type")]
-    public new string? Type { get; set; }
+    public new string? Type { get; set; } = "json_schema";
 
     [JsonPropertyName("description")]
     public string? Description { get; set; }

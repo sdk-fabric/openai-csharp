@@ -13,7 +13,7 @@ public class ResponseToolMCP : ResponseTool
     public string? ServerLabel { get; set; }
 
     [JsonPropertyName("type")]
-    public new string? Type { get; set; }
+    public new string? Type { get; set; } = "mcp";
 
     [JsonPropertyName("allowed_tools")]
     public System.Collections.Generic.List<string>? AllowedTools { get; set; }
