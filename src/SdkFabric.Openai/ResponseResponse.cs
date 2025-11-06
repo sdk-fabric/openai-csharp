@@ -22,10 +22,13 @@ public class ResponseResponse
     public string? IncompleteDetails { get; set; }
 
     [JsonPropertyName("object")]
-    public string? Object { get; set; }
+    public string? Object { get; set; } = "response";
 
     [JsonPropertyName("output")]
     public System.Collections.Generic.List<ResponseResponseOutput>? Output { get; set; }
+
+    [JsonPropertyName("previous_response_id")]
+    public string? PreviousResponseId { get; set; }
 
 }
 

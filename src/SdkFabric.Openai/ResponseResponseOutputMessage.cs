@@ -25,7 +25,7 @@ public class ResponseResponseOutputMessage : ResponseResponseOutput
     public string? Status { get; set; }
 
     [JsonPropertyName("type")]
-    public new string? Type { get; set; }
+    public new string? Type { get; set; } = "message";
 
 }
 
