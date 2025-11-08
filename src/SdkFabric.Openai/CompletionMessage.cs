@@ -19,7 +19,7 @@ public abstract class CompletionMessage
     public string? Role { get; set; }
 
     [JsonPropertyName("content")]
-    public System.Collections.Generic.List<string>? Content { get; set; }
+    public string? Content { get; set; }
 
 }
 
