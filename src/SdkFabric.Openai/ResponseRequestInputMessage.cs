@@ -10,7 +10,7 @@ namespace SdkFabric.Openai;
 public class ResponseRequestInputMessage : ResponseRequestInput
 {
     [JsonPropertyName("content")]
-    public System.Collections.Generic.List<string>? Content { get; set; }
+    public string? Content { get; set; }
 
     [JsonPropertyName("role")]
     public string? Role { get; set; }
