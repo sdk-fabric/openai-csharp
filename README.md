@@ -15,14 +15,14 @@ using SdkFabric.Openai.Client;
 Client client = Client.Build("[access_token]")
 
 // Creates a model response for the given chat conversation.
-CompletionResponse response = client.Completions().Create(new CompletionRequest());
+Completion_Response response = client.Completions().create(new Completion_Request());
 
 // Delete a stored chat completion.
-CompletionDeleted response = client.Completions().Delete("completion_id");
+Completion_Deleted response = client.Completions().delete("completion_id");
 
 // List stored Chat Completions.
-CompletionCollection response = client.Completions().Getall("after", 1, "model", "order");
+Completion_Collection response = client.Completions().getAll("after", 1, "model", "order");
 
 // Creates a model response.
-ResponseResponse response = client.Responses().Create(new ResponseRequest());
+Response_Response response = client.Responses().create(new Response_Request());
 ```
