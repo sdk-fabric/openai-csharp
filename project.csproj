@@ -3,15 +3,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <PackageId>SdkFabric.Openai</PackageId>
     <PackageVersion>0.1.0</PackageVersion>
-    <Authors>chriskapp</Authors>
+    <Authors>Christoph Kappestein</Authors>
     <Company>Apioo</Company>
-    <Description>Openai C# SDK managed by SDK Fabric</Description>
+    <Description>OpenAI C# SDK managed by SDK Fabric</Description>
     <Copyright>Christoph Kappestein</Copyright>
     <RepositoryUrl>https://github.com/sdk-fabric/openai-csharp</RepositoryUrl>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>sdk-fabric-openai</AssemblyName>
-    <PackageProjectUrl>https://sdk-fabric.org/</PackageProjectUrl>
+    <AssemblyName>sdkfabric-openai</AssemblyName>
+    <PackageProjectUrl>https://sdk-fabric.org</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/sdk-fabric/openai-csharp/blob/main/LICENSE</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
