@@ -1,7 +1,7 @@
 {
   "namespace": "SdkFabric.Openai",
   "company": "Apioo",
-  "description": "OpenAI C# SDK managed by SDK Fabric",
+  "description": "Openai C# SDK managed by SDK Fabric",
   "copyright": "Christoph Kappestein",
   "website": "https://sdk-fabric.org"
 }
