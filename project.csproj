@@ -5,7 +5,7 @@
     <PackageVersion>0.1.0</PackageVersion>
     <Authors>Christoph Kappestein</Authors>
     <Company>Apioo</Company>
-    <Description>OpenAI C# SDK managed by SDK Fabric</Description>
+    <Description>Openai C# SDK managed by SDK Fabric</Description>
     <Copyright>Christoph Kappestein</Copyright>
     <RepositoryUrl>https://github.com/sdk-fabric/openai-csharp</RepositoryUrl>
     <ImplicitUsings>enable</ImplicitUsings>
